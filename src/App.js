@@ -6,16 +6,25 @@ import "./styles.css";
 
 function App() {
 
-  const [repositories, setRepository] = useState([]);
+  const [repositories, setRepositories] = useState([]);
 
   useEffect(() => {
     api.get('repositories').then(response => {
-      setRepository(response.data);
+      setRepositories(response.data);
     })
   }, [])
 
   async function handleAddRepository() {
-    // TODO
+
+    const response = await api.post('repositories', {
+      title: `Novo repositório ${Date.now()}`,
+      url: 'http://github.com/arielconti10/novorepositorio.git',
+      techs: ['ReactJS, MongoDB']
+    })
+
+    const repository = response.data;
+
+    setRepositories([...repositories, repository]);
   }
 
   async function handleRemoveRepository(id) {
