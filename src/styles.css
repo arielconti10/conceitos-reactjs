@@ -4,18 +4,34 @@
   box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 body {
-  font: 14px sans-serif;
+  font: 18px 'Roboto';
 }
 
 div {
-  width: 100%;
+  width: calc(100% - 40px);
   margin: 20px;
+}
+
+div ul {
+  background-color: #c3c3c3;
+  border-radius: 5px;
 }
 
 div li {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px;
+  font-weight: bold;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+div li:last-child{
+  border-bottom: none;
 }
 
 div li + li {
@@ -26,10 +42,11 @@ button {
   background: #7159c1;
   color: #fff;
   border: 0;
-  padding: 10px 15px;
+  padding: 10px 25px;
   cursor: pointer;
   margin-top: 15px;
   font-weight: bold;
+  border-radius: 5px;
   font-size: 14px;
 }
 

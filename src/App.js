@@ -17,7 +17,7 @@ function App() {
   async function handleAddRepository() {
 
     const response = await api.post('repositories', {
-      title: `Novo repositório ${Date.now()}`,
+      title: `Desafio ReactJS`,
       url: 'http://github.com/arielconti10/novorepositorio.git',
       techs: ['ReactJS, MongoDB']
     })
@@ -46,8 +46,8 @@ function App() {
           </li>
         ))}
       </ul>
-
       <button onClick={handleAddRepository}>Adicionar</button>
+
     </div>
   );
 }
